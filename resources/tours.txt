@@ -1,6 +1,5 @@
-Ruta Sabores del Lago;gastronomico;4;35000
-Paseo Lacustre Llanquihue;lacustre;3;28000
-Excursion Volcan Osorno;aventura;8;65000
-Tour Cultural Frutillar;cultural;5;42000
-Ruta Cervecera Puerto Varas;gastronomico;4;39000
-Cabalgata Campo Sur;aventura;2;25000
+Ruta del Lago Llanquihue;lacustre;4;35000;Carlos Muñoz;Paseos lacustres;5
+Tour Gastronomico Frutillar;gastronomico;3;28000;María Soto;Gastronomía local;4
+Excursion Volcan Osorno;cultural;6;45000;Pedro Vargas;Historia y naturaleza;7
+Ruta Patrimonial Puerto Varas;cultural;2;20000;Ana Torres;Patrimonio local;3
+Paseo en Kayak;aventura;5;40000;Javier Rojas;Actividades outdoor;6

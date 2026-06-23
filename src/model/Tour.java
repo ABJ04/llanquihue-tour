@@ -5,15 +5,17 @@ public class Tour {
     private String tipo;
     private int duracionHoras;
     private int precio;
+    private GuiaTuristico guiaTuristico;
 
     public Tour() {
     }
 
-    public Tour(String nombre, String tipo, int duracionHoras, int precio) {
+    public Tour(String nombre, String tipo, int duracionHoras, int precio, GuiaTuristico guiaTuristico) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.duracionHoras = duracionHoras;
         this.precio = precio;
+        this.guiaTuristico = guiaTuristico;
     }
 
     public String getNombre() {
@@ -48,6 +50,14 @@ public class Tour {
         this.precio = precio;
     }
 
+    public GuiaTuristico getGuiaTuristico() {
+        return guiaTuristico;
+    }
+
+    public void setGuiaTuristico(GuiaTuristico guiaTuristico) {
+        this.guiaTuristico = guiaTuristico;
+    }
+
     @Override
     public String toString() {
         return "Tour{" +
@@ -55,6 +65,7 @@ public class Tour {
                 ", tipo='" + tipo + '\'' +
                 ", duracionHoras=" + duracionHoras +
                 ", precio=" + precio +
+                ", guiaTuristico=" + guiaTuristico +
                 '}';
     }
 }
