@@ -6,12 +6,14 @@ import service.TourService;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import data.GestorServicios;
 
 public class Main {
 
     public static void main(String[] args) {
         GestorDatos gestorDatos = new GestorDatos();
         TourService tourService = new TourService();
+        GestorServicios gestorServicios = new GestorServicios();
         Scanner scanner = new Scanner(System.in);
 
         ArrayList<Tour> tours = gestorDatos.cargarTours("resources/tours.txt");
@@ -24,7 +26,9 @@ public class Main {
             System.out.println("2. Buscar tours por tipo");
             System.out.println("3. Buscar tours por precio maximo");
             System.out.println("4. Salir");
+            System.out.println("5. Mostrar servicios Semana 6");
             System.out.print("Seleccione una opcion: ");
+
 
             try {
                 opcion = Integer.parseInt(scanner.nextLine());
@@ -48,6 +52,10 @@ public class Main {
 
                     case 4:
                         System.out.println("Saliendo del sistema...");
+                        break;
+
+                    case 5:
+                        gestorServicios.mostrarServiciosSemana6();
                         break;
 
                     default:

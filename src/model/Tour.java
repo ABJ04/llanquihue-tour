@@ -1,11 +1,11 @@
 package model;
 
 public class Tour {
-    private String nombre;
-    private String tipo;
-    private int duracionHoras;
-    private int precio;
-    private GuiaTuristico guiaTuristico;
+    protected String nombre;
+    protected String tipo;
+    protected int duracionHoras;
+    protected int precio;
+    protected GuiaTuristico guiaTuristico;
 
     public Tour() {
     }
