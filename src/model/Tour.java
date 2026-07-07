@@ -58,6 +58,10 @@ public class Tour {
         this.guiaTuristico = guiaTuristico;
     }
 
+    public void mostrarInformacion() {
+        System.out.println(toString());
+    }
+
     @Override
     public String toString() {
         return "Tour{" +

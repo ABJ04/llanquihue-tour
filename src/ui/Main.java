@@ -26,7 +26,7 @@ public class Main {
             System.out.println("2. Buscar tours por tipo");
             System.out.println("3. Buscar tours por precio maximo");
             System.out.println("4. Salir");
-            System.out.println("5. Mostrar servicios Semana 6");
+            System.out.println("5. Mostrar servicios Semana 7");
             System.out.print("Seleccione una opcion: ");
 
 
@@ -55,7 +55,7 @@ public class Main {
                         break;
 
                     case 5:
-                        gestorServicios.mostrarServiciosSemana6();
+                        gestorServicios.mostrarServiciosSemana7();
                         break;
 
                     default:

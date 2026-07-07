@@ -11,6 +11,12 @@ public class PaseoLacustre extends Tour {
     }
 
     @Override
+    public void mostrarInformacion() {
+        System.out.println("=== Paseo Lacustre ===");
+        System.out.println(toString());
+    }
+
+    @Override
     public String toString() {
         return super.toString() +
                 ", tipoEmbarcacion='" + tipoEmbarcacion + "'";
