@@ -26,7 +26,8 @@ public class Main {
             System.out.println("2. Buscar tours por tipo");
             System.out.println("3. Buscar tours por precio maximo");
             System.out.println("4. Salir");
-            System.out.println("5. Mostrar servicios Semana 7");
+            System.out.println("5. Mostrar servicios con polimorfismo");
+            System.out.println("6. Gestión de entidades (Interfaz gráfica)");
             System.out.print("Seleccione una opcion: ");
 
 
@@ -56,6 +57,11 @@ public class Main {
 
                     case 5:
                         gestorServicios.mostrarServiciosSemana7();
+                        break;
+
+                    case 6:
+                        VentanaEntidades ventanaEntidades = new VentanaEntidades();
+                        ventanaEntidades.mostrarMenu();
                         break;
 
                     default:

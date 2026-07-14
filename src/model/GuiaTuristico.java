@@ -1,6 +1,6 @@
 package model;
 
-public class GuiaTuristico {
+public class GuiaTuristico implements Registrable {
     private String nombre;
     private String especialidad;
     private int experienciaAnios;
@@ -36,6 +36,13 @@ public class GuiaTuristico {
 
     public void setExperienciaAnios(int experienciaAnios) {
         this.experienciaAnios = experienciaAnios;
+    }
+
+    @Override
+    public String mostrarResumen() {
+        return "Guía turístico: " + nombre +
+                "\nEspecialidad: " + especialidad +
+                "\nExperiencia: " + experienciaAnios + " años";
     }
 
     @Override
