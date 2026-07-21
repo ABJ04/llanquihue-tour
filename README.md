@@ -336,4 +336,3 @@ Dentro de la opción **6** es posible registrar guías turísticos, vehículos y
 **Nombre:** Alfredo Beltrán
 
 **Asignatura:** Desarrollo Orientado a Objetos I
-**Asignatura:** Desarrollo Orientado a Objetos I
