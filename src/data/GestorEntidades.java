@@ -1,5 +1,6 @@
 package data;
 
+import exceptions.DatoInvalidoException;
 import model.ColaboradorExterno;
 import model.GuiaTuristico;
 import model.Registrable;
@@ -9,7 +10,8 @@ import java.util.ArrayList;
 
 public class GestorEntidades {
 
-    private ArrayList<Registrable> entidades;
+```
+    private final ArrayList<Registrable> entidades;
 
     public GestorEntidades() {
         entidades = new ArrayList<>();
@@ -17,6 +19,46 @@ public class GestorEntidades {
 
     public void agregarEntidad(Registrable entidad) {
         entidades.add(entidad);
+    }
+
+    public void agregarGuia(GuiaTuristico guia) throws DatoInvalidoException {
+
+        if (guia.getNombre() == null || guia.getNombre().isBlank()) {
+            throw new DatoInvalidoException(
+                    "El nombre del guía no puede estar vacío."
+            );
+        }
+
+        if (guia.getExperienciaAnios() < 0) {
+            throw new DatoInvalidoException(
+                    "Los años de experiencia no pueden ser negativos."
+            );
+        }
+
+        entidades.add(guia);
+    }
+
+    public void agregarVehiculo(Vehiculo vehiculo) throws DatoInvalidoException {
+
+        if (vehiculo.getPatente() == null || vehiculo.getPatente().isBlank()) {
+            throw new DatoInvalidoException(
+                    "La patente no puede estar vacía."
+            );
+        }
+
+        if (vehiculo.getModelo() == null || vehiculo.getModelo().isBlank()) {
+            throw new DatoInvalidoException(
+                    "El modelo no puede estar vacío."
+            );
+        }
+
+        if (vehiculo.getCapacidad() <= 0) {
+            throw new DatoInvalidoException(
+                    "La capacidad debe ser mayor que cero."
+            );
+        }
+
+        entidades.add(vehiculo);
     }
 
     public String mostrarTodasLasEntidades() {
@@ -49,4 +91,6 @@ public class GestorEntidades {
     public ArrayList<Registrable> getEntidades() {
         return entidades;
     }
+```
+
 }

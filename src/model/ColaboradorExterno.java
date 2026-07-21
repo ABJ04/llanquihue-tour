@@ -30,4 +30,13 @@ public class ColaboradorExterno implements Registrable {
                 "\nServicio: " + servicio +
                 "\nEmpresa: " + empresa;
     }
+
+    @Override
+    public String toString() {
+        return "ColaboradorExterno{" +
+                "nombre='" + nombre + '\'' +
+                ", servicio='" + servicio + '\'' +
+                ", empresa='" + empresa + '\'' +
+                '}';
+    }
 }

@@ -30,4 +30,13 @@ public class Vehiculo implements Registrable {
                 "\nPatente: " + patente +
                 "\nCapacidad: " + capacidad + " pasajeros";
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "patente='" + patente + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", capacidad=" + capacidad +
+                '}';
+    }
 }

@@ -1,193 +1,339 @@
-# Llanquihue Tour App
+# Llanquihue Tour
 
 ## Descripción
 
-Aplicación Java desarrollada para la agencia de turismo Llanquihue Tour.
+Llanquihue Tour es una aplicación desarrollada en Java que permite gestionar los servicios turísticos de una agencia de turismo mediante la aplicación de los principales conceptos de Programación Orientada a Objetos (POO).
 
-El sistema permite gestionar información relacionada con servicios turísticos y diferentes entidades de la agencia. El proyecto integra conceptos de programación orientada a objetos como composición, herencia, polimorfismo, interfaces, colecciones genéricas y clasificación de objetos mediante `instanceof`.
+El sistema administra distintos tipos de tours, permite cargar información desde un archivo de texto, realizar búsquedas, registrar entidades mediante una interfaz gráfica desarrollada con Java Swing y validar los datos ingresados utilizando una excepción personalizada.
 
-En esta versión se incorporó una interfaz común llamada `Registrable`, implementada por distintos tipos de entidades, además de una interfaz gráfica desarrollada con Java Swing para registrar y visualizar información.
+---
 
-## Objetivo
+# Objetivo
 
-Integrar los conceptos fundamentales de programación orientada a objetos mediante el uso de interfaces, herencia, polimorfismo, colecciones genéricas, `instanceof` e interfaz gráfica.
+Desarrollar un sistema orientado a objetos que integre los principales conceptos de la POO, tales como:
 
-El sistema permite almacenar distintos tipos de objetos dentro de una colección común, identificar su tipo en tiempo de ejecución y mostrar la información correspondiente de cada entidad.
+- Encapsulamiento.
+- Herencia.
+- Polimorfismo.
+- Composición.
+- Interfaces.
+- Colecciones genéricas.
+- Sobrescritura de métodos.
+- Manejo de excepciones.
+- Lectura de archivos.
+- Interfaz gráfica.
 
-## Funcionalidades
+---
 
-- Cargar datos de tours desde el archivo `tours.txt`.
-- Almacenar objetos `Tour` en un `ArrayList`.
+# Funcionalidades
+
+El sistema permite:
+
+- Cargar tours desde el archivo `tours.txt`.
+- Almacenar objetos `Tour` en una colección `ArrayList`.
 - Mostrar todos los tours disponibles.
 - Buscar tours por tipo.
 - Buscar tours por precio máximo.
-- Aplicar composición entre las clases `Tour` y `GuiaTuristico`.
+- Aplicar composición entre `Tour` y `GuiaTuristico`.
 - Implementar herencia mediante la clase base `Tour`.
-- Utilizar las subclases `RutaGastronomica`, `PaseoLacustre` y `ExcursionCultural`.
-- Aplicar polimorfismo mediante una colección `List<Tour>`.
-- Recorrer servicios turísticos mediante referencias de la clase base.
-- Implementar la interfaz común `Registrable`.
-- Implementar `Registrable` en las clases `GuiaTuristico`, `Vehiculo` y `ColaboradorExterno`.
-- Utilizar una colección `ArrayList<Registrable>` para almacenar diferentes tipos de entidades.
-- Clasificar objetos mediante el operador `instanceof`.
-- Utilizar `instanceof` con `GuiaTuristico`, `Vehiculo` y `ColaboradorExterno`.
-- Registrar entidades mediante una interfaz gráfica.
-- Mostrar las entidades registradas mediante una interfaz gráfica.
-- Utilizar componentes de Java Swing como `JOptionPane`, `JTextArea` y `JScrollPane`.
-- Organizar el proyecto mediante paquetes funcionales.
+- Utilizar las clases derivadas:
+    - `RutaGastronomica`
+    - `PaseoLacustre`
+    - `ExcursionCultural`
+- Aplicar polimorfismo utilizando una colección `List<Tour>`.
+- Implementar la interfaz `Registrable`.
+- Registrar:
+    - Guías turísticos.
+    - Vehículos.
+    - Colaboradores externos.
+- Almacenar entidades en una colección `ArrayList<Registrable>`.
+- Clasificar objetos utilizando `instanceof`.
+- Registrar entidades mediante una interfaz gráfica desarrollada con Java Swing.
+- Mostrar todas las entidades registradas.
 
-## Interfaz Registrable
+---
 
-La interfaz `Registrable` define el método:
+# Programación Orientada a Objetos aplicada
 
-```java
-String mostrarResumen();
-```
+## Encapsulamiento
 
-Este método permite establecer un comportamiento común para diferentes tipos de entidades.
+Todas las clases utilizan atributos privados (`private`) y métodos getters y setters para controlar el acceso a la información.
 
-Las clases que implementan la interfaz son:
+---
 
-- `GuiaTuristico`
-- `Vehiculo`
-- `ColaboradorExterno`
+## Herencia
 
-Cada clase implementa su propia versión del método `mostrarResumen()`.
+La clase base del sistema es:
 
-## Herencia y polimorfismo
+- `Tour`
 
-La clase `Tour` funciona como clase base de la jerarquía de servicios turísticos.
-
-Las siguientes clases heredan de `Tour`:
+De ella heredan:
 
 - `RutaGastronomica`
 - `PaseoLacustre`
 - `ExcursionCultural`
 
-Las subclases utilizan `super()` en sus constructores y sobrescriben métodos de la clase base.
+---
 
-Además, se utiliza una colección:
+## Polimorfismo
+
+Los diferentes tipos de tours son almacenados dentro de una colección:
 
 ```java
 List<Tour>
 ```
 
-para almacenar diferentes tipos de servicios turísticos y recorrerlos mediante referencias de la clase base.
+permitiendo recorrerlos mediante referencias de la clase padre.
 
-## Colección de entidades
+---
 
-Para almacenar distintos tipos de entidades se utiliza:
+## Composición
+
+La clase `Tour` contiene un objeto de tipo:
+
+```java
+GuiaTuristico
+```
+
+estableciendo una relación de composición.
+
+---
+
+## Interfaces
+
+Se implementa la interfaz:
+
+```java
+Registrable
+```
+
+La cual define el método:
+
+```java
+String mostrarResumen();
+```
+
+Esta interfaz es implementada por:
+
+- `GuiaTuristico`
+- `Vehiculo`
+- `ColaboradorExterno`
+
+---
+
+## Colecciones Genéricas
+
+El sistema utiliza:
+
+```java
+ArrayList<Tour>
+```
+
+para almacenar los tours.
+
+Además utiliza:
 
 ```java
 ArrayList<Registrable>
 ```
 
-Esta colección permite almacenar objetos de las clases:
+para almacenar distintos tipos de entidades.
 
-- `GuiaTuristico`
-- `Vehiculo`
-- `ColaboradorExterno`
+---
 
-Los objetos son clasificados mediante el operador `instanceof` para identificar su tipo real y mostrar la información correspondiente.
+## instanceof
 
-## Interfaz gráfica
+Para identificar el tipo real de cada objeto almacenado en la colección de entidades se utiliza el operador:
 
-La aplicación incluye una interfaz gráfica desarrollada con Java Swing.
+```java
+instanceof
+```
 
-Desde la opción de gestión de entidades es posible:
+permitiendo diferenciar:
+
+- Guías turísticos.
+- Vehículos.
+- Colaboradores externos.
+
+---
+
+# Manejo de excepciones
+
+El proyecto incorpora una excepción personalizada llamada:
+
+```java
+DatoInvalidoException
+```
+
+Esta excepción permite validar la información ingresada por el usuario antes de registrar una entidad.
+
+Las validaciones implementadas incluyen:
+
+### Guías turísticos
+
+- El nombre no puede estar vacío.
+- Los años de experiencia no pueden ser negativos.
+
+### Vehículos
+
+- La patente no puede estar vacía.
+- El modelo no puede estar vacío.
+- La capacidad debe ser mayor que cero.
+
+### Colaboradores externos
+
+- El nombre no puede estar vacío.
+- El servicio no puede estar vacío.
+- La empresa no puede estar vacía.
+
+Cuando una validación falla, el sistema informa el error mediante un `JOptionPane` y evita registrar el objeto.
+
+---
+
+# Lectura de archivos
+
+Los tours se cargan automáticamente desde el archivo:
+
+```text
+resources/tours.txt
+```
+
+La lectura del archivo permite crear objetos `Tour` y almacenarlos en memoria para su posterior consulta.
+
+---
+
+# Interfaz gráfica
+
+El proyecto incorpora una interfaz desarrollada con Java Swing.
+
+Desde ella es posible:
 
 1. Registrar un guía turístico.
 2. Registrar un vehículo.
 3. Registrar un colaborador externo.
 4. Mostrar todas las entidades registradas.
-5. Salir de la gestión de entidades.
+5. Salir del sistema.
 
 La interfaz utiliza componentes como:
 
-- `JOptionPane`
-- `JTextArea`
-- `JScrollPane`
-- `JFrame`
+- JFrame
+- JOptionPane
+- JTextArea
+- JScrollPane
 
-## Paquetes utilizados
+---
 
-### `model`
+# Organización del proyecto
 
-Contiene las clases e interfaces principales del dominio:
+## model
 
-- `Tour`
-- `RutaGastronomica`
-- `PaseoLacustre`
-- `ExcursionCultural`
-- `GuiaTuristico`
-- `Vehiculo`
-- `ColaboradorExterno`
-- `Registrable`
+Contiene las clases del dominio del sistema.
 
-### `data`
+- Tour
+- RutaGastronomica
+- PaseoLacustre
+- ExcursionCultural
+- GuiaTuristico
+- Vehiculo
+- ColaboradorExterno
+- Registrable
 
-Contiene las clases encargadas de la gestión de datos y colecciones:
+---
 
-- `GestorDatos`
-- `GestorServicios`
-- `GestorEntidades`
+## data
 
-### `service`
+Contiene las clases responsables del almacenamiento y administración de los datos.
 
-Contiene la lógica relacionada con la búsqueda y visualización de tours:
+- GestorDatos
+- GestorServicios
+- GestorEntidades
 
-- `TourService`
+---
 
-### `ui`
+## service
 
-Contiene las clases relacionadas con la interacción con el usuario:
+Contiene la lógica de negocio del sistema.
 
-- `Main`
-- `VentanaEntidades`
+- TourService
 
-## Clases e interfaces implementadas
+---
 
-- `Tour`
-- `RutaGastronomica`
-- `PaseoLacustre`
-- `ExcursionCultural`
-- `GuiaTuristico`
-- `Vehiculo`
-- `ColaboradorExterno`
-- `Registrable`
-- `GestorDatos`
-- `GestorServicios`
-- `GestorEntidades`
-- `TourService`
-- `VentanaEntidades`
-- `Main`
+## ui
 
-## Cómo ejecutar
+Contiene las clases relacionadas con la interacción con el usuario.
+
+- Main
+- VentanaEntidades
+
+---
+
+## exceptions
+
+Contiene las excepciones personalizadas del sistema.
+
+- DatoInvalidoException
+
+---
+
+# Clases implementadas
+
+- Tour
+- RutaGastronomica
+- PaseoLacustre
+- ExcursionCultural
+- GuiaTuristico
+- Vehiculo
+- ColaboradorExterno
+- Registrable
+- GestorDatos
+- GestorServicios
+- GestorEntidades
+- TourService
+- VentanaEntidades
+- Main
+- DatoInvalidoException
+
+---
+
+# Cómo ejecutar el proyecto
 
 1. Abrir el proyecto en IntelliJ IDEA.
 2. Verificar que el archivo `tours.txt` se encuentre dentro de la carpeta `resources`.
-3. Ejecutar la clase `Main`, ubicada en el paquete `ui`.
-4. Utilizar el menú principal para acceder a las funcionalidades del sistema.
+3. Ejecutar la clase `Main`.
+4. Utilizar el menú principal del sistema.
 
-### Opciones principales
+---
 
-- **Opción 1:** Mostrar todos los tours.
-- **Opción 2:** Buscar tours por tipo.
-- **Opción 3:** Buscar tours por precio máximo.
-- **Opción 4:** Salir del sistema.
-- **Opción 5:** Mostrar servicios utilizando polimorfismo.
-- **Opción 6:** Abrir la gestión de entidades mediante interfaz gráfica.
+# Menú principal
 
-En la opción **6** se pueden registrar guías turísticos, vehículos y colaboradores externos, además de visualizar todas las entidades registradas.
+1. Mostrar todos los tours.
+2. Buscar tours por tipo.
+3. Buscar tours por precio máximo.
+4. Salir.
+5. Mostrar tours utilizando polimorfismo.
+6. Abrir la gestión de entidades mediante interfaz gráfica.
 
-## Tecnologías utilizadas
+Dentro de la opción **6** es posible registrar guías turísticos, vehículos y colaboradores externos, además de visualizar todas las entidades registradas.
+
+---
+
+# Tecnologías utilizadas
 
 - Java
-- Programación Orientada a Objetos
 - Java Swing
 - IntelliJ IDEA
-- Git y GitHub
+- Programación Orientada a Objetos
+- Colecciones Genéricas
+- Manejo de Excepciones
+- Lectura de archivos TXT
+- Git
+- GitHub
 
-## Autor
+---
 
-**Nombre estudiante:** Alfredo Beltrán
+# Autor
+
+**Nombre:** Alfredo Beltrán
+
+**Asignatura:** Desarrollo Orientado a Objetos I
+**Asignatura:** Desarrollo Orientado a Objetos I

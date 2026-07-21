@@ -1,6 +1,7 @@
 package ui;
 
 import data.GestorEntidades;
+import exceptions.DatoInvalidoException;
 import model.ColaboradorExterno;
 import model.GuiaTuristico;
 import model.Vehiculo;
@@ -131,7 +132,7 @@ public class VentanaEntidades {
                     experiencia
             );
 
-            gestorEntidades.agregarEntidad(guia);
+            gestorEntidades.agregarGuia(guia);
 
             JOptionPane.showMessageDialog(
                     ventanaPrincipal,
@@ -142,6 +143,14 @@ public class VentanaEntidades {
             JOptionPane.showMessageDialog(
                     ventanaPrincipal,
                     "Los años de experiencia deben ser un número."
+            );
+
+        } catch (DatoInvalidoException e) {
+            JOptionPane.showMessageDialog(
+                    ventanaPrincipal,
+                    e.getMessage(),
+                    "Dato inválido",
+                    JOptionPane.ERROR_MESSAGE
             );
         }
     }
@@ -184,7 +193,7 @@ public class VentanaEntidades {
                     capacidad
             );
 
-            gestorEntidades.agregarEntidad(vehiculo);
+            gestorEntidades.agregarVehiculo(vehiculo);
 
             JOptionPane.showMessageDialog(
                     ventanaPrincipal,
@@ -195,6 +204,14 @@ public class VentanaEntidades {
             JOptionPane.showMessageDialog(
                     ventanaPrincipal,
                     "La capacidad debe ser un número."
+            );
+
+        } catch (DatoInvalidoException e) {
+            JOptionPane.showMessageDialog(
+                    ventanaPrincipal,
+                    e.getMessage(),
+                    "Dato inválido",
+                    JOptionPane.ERROR_MESSAGE
             );
         }
     }
