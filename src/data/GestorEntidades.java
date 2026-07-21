@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class GestorEntidades {
 
-```
     private final ArrayList<Registrable> entidades;
 
     public GestorEntidades() {
@@ -91,6 +90,5 @@ public class GestorEntidades {
     public ArrayList<Registrable> getEntidades() {
         return entidades;
     }
-```
 
 }
